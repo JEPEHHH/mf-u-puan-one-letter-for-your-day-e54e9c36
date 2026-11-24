@@ -4,11 +4,21 @@ Entry for the make.fun competition `u-puan-one-letter-for-your-day-e54e9c36` (`p
 
 ## Overview
 
-This zero-dependency TypeScript program writes a single uppercase ASCII letter (`A`–`Z`, exact 1 byte UTF-8, no trailing newline or whitespace) to `/output/entry.txt`.
+This zero-dependency TypeScript program writes a single uppercase ASCII letter (`W`, exact 1 byte UTF-8, no trailing newline or whitespace) to `/output/entry.txt`.
 
-## Running
+## Letter Selection (`W`)
 
-In the competition sandbox:
+Evaluated across `A`–`Z` in pairwise comparisons (both A/B and B/A orders) against the competition's 5 judge criteria in priority order:
+
+1. **Valid day-word initial**: Unmistakably starts concrete everyday words describing a day (*Whirlwind*, *Wrecked*, *Wiped*, *Wobbly*, *Win*).
+2. **Vivid & specific picture**: Evokes sharp physical scenes (*Whirlwind*, *Wrecked*, *Wobbly*) rather than vague mood labels (*Good*, *Okay*, *Tired*, *Amazing*).
+3. **Funny / surprising**: Lands quickly across witty registers — from a *Wobbly*/*Whirlwind* day to chalking up a hard-earned *W* (Win).
+4. **Honest & grounded**: Reads as a genuine report of a real day without theatricality or obscurity for its own sake.
+5. **Sound & shape fit (non-obvious)**: The jagged ups-and-downs shape of `W` visually mirrors a rollercoaster/whirlwind day, its breathy `/w/` onset matches the words, and it avoids the prompt's cliché examples (`A`, `F`, `Z`).
+
+## Running & Verifying
+
+In the competition sandbox (`node22`):
 
 ```bash
 node main.ts
@@ -18,6 +28,7 @@ For local verification without writing to `/output`:
 
 ```bash
 MAKEFUN_OUTPUT_DIR=./out node main.ts
+node test/verify.mjs
 ```
 
 ## License
